@@ -58,6 +58,10 @@ export default class Sketch {
 
   }
 
+  getValue(val){
+    return parseFloat(this.container.getAttribute('data-'+val))
+  }
+
 
   mouseEvents() {
     window.addEventListener('mousemove', (e) => {
@@ -81,10 +85,13 @@ export default class Sketch {
   settings() {
     let that = this;
     this.settings = {
-      grid: 34,
-      mouse: 0.25,
-      strength: 1,
+      grid: this.getValue('grid')||34,
+      mouse: this.getValue('mouse')||0.25,
+      strength: this.getValue('strength')||1,
+      relaxation: this.getValue('relaxation')||0.9,
     };
+
+
     this.gui = new GUI();
 
     this.gui.add(this.settings, "grid", 2, 1000, 1).onFinishChange(() => {
@@ -92,6 +99,7 @@ export default class Sketch {
     });
     this.gui.add(this.settings, "mouse", 0, 1, 0.01);
     this.gui.add(this.settings, "strength", 0, 1, 0.01);
+    this.gui.add(this.settings, "relaxation", 0, 1, 0.01);
   }
 
   setupResize() {
@@ -143,12 +151,13 @@ export default class Sketch {
     const b = Math.floor(color.b * 255);
 
     for (let i = 0; i < size; i++) {
-      let r = Math.random() * 255;
+      let r = Math.random() * 255 - 125;
+      let r1 = Math.random() * 255 - 125;
 
       const stride = i * 3;
 
       data[stride] = r;
-      data[stride + 1] = r;
+      data[stride + 1] = r1;
       data[stride + 2] = r;
 
     }
@@ -203,8 +212,8 @@ export default class Sketch {
   updateDataTexture() {
     let data = this.texture.image.data;
     for (let i = 0; i < data.length; i += 3) {
-      data[i] *= 0.9
-      data[i + 1] *= 0.9
+      data[i] *= this.settings.relaxation
+      data[i + 1] *= this.settings.relaxation
     }
 
     let gridMouseX = this.size * this.mouse.x;
