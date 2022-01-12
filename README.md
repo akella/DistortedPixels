@@ -2,7 +2,7 @@
 
 Distorting pixels with DataTexture, based on [Infinite Bad Guy website](https://billie.withyoutube.com/)
 
-![Image Title](https://generative-placeholders.glitch.me/image?width=800&height=600")
+![Image Title](https://tympanus.net/codrops/wp-content/uploads/2022/01/DistrotedPixels_feat.jpg)
 
 [Article on Codrops](https://tympanus.net/codrops/?p=)
 
