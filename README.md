@@ -1,12 +1,3 @@
-*How to use this template:*
-
-- The general styles for the demo page are in css/base.css
-- The README.md can be used to add credits of resources used
-- For writing the tutorial, take a look at https://github.com/crnacura/CodropsTemplate/wiki/Writing-the-article
-- Delete this 'how to' in the final version and leave the following (fill in title/description, credits and social links, we'll do the rest):
-
--------
-
 # Distorted Pixels
 
 Distorting pixels with DataTexture, based on [Infinite Bad Guy website](https://billie.withyoutube.com/)
@@ -15,7 +6,7 @@ Distorting pixels with DataTexture, based on [Infinite Bad Guy website](https://
 
 [Article on Codrops](https://tympanus.net/codrops/?p=)
 
-[Demo](http://tympanus.net/Development/.../)
+[Demo](http://tympanus.net/Development/DistortedPixels/)
 
 
 ## Installation
@@ -23,7 +14,7 @@ Distorting pixels with DataTexture, based on [Infinite Bad Guy website](https://
 Install dependencies:
 
 ```
-npm i
+npm install
 ```
 
 Compile the code for development and start a local server:
@@ -43,8 +34,6 @@ npx parcel build
 - Images from [Unsplash](https://unsplash.com/)
 
 ## Misc
-
-Follow *Author*: [Twitter](), [Dribbble](), [Google+](), [GitHub]() 
 
 Follow Codrops: [Twitter](http://www.twitter.com/codrops), [Facebook](http://www.facebook.com/codrops), [GitHub](https://github.com/codrops), [Instagram](https://www.instagram.com/codropsss/)
 
